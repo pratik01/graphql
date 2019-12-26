@@ -1,0 +1,25 @@
+type Vehicle {
+	id: ID!,
+	type: String,
+	modelCode: String,
+	brandName: String,
+	user: User
+}
+input VehicleInput{
+	type: String,
+	modelCode: String,
+	brandName: String,
+	user: UserDto
+	
+}
+input UserDto{
+	id: Int!	
+}	
+type Query {
+	vehicles(count: Int):[Vehicle]
+	vehicle(id: ID):Vehicle
+}
+type Mutation {
+	createVehicle(input: VehicleInput):Vehicle
+	createUser(input: UserInput):User	
+}

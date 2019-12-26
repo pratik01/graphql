@@ -1,0 +1,19 @@
+
+type User{
+	id: Int!,	
+	firstName: String,
+	lastName: String,
+	email: String,
+	listOfVehicle: [Vehicle]
+}
+input UserInput{	
+	firstName: String,
+	lastName: String,
+	email: String	
+}
+extend type Query{
+	users(count: Int):[User]
+	user(id: ID):User
+}
+
+
